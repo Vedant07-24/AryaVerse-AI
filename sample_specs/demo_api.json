@@ -1,0 +1,62 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "AryaVerse Demo API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://jsonplaceholder.typicode.com"
+    }
+  ],
+  "paths": {
+    "/users/{id}": {
+      "get": {
+        "operationId": "getUserById",
+        "summary": "Get a user by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/posts": {
+      "get": {
+        "operationId": "listPostsByUser",
+        "summary": "List posts written by a user",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    },
+    "/posts/{id}": {
+      "get": {
+        "operationId": "getPostById",
+        "summary": "Get a post by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ]
+      }
+    }
+  }
+}

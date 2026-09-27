@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arya Verse AI — Autonomous API Orchestration</title>
+  <link rel="icon" href="/assets/logo.jpg">
+  <link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<div class="ambient a1"></div><div class="ambient a2"></div>
+<header class="topbar">
+  <div class="brand">
+    <img src="/assets/logo.jpg" class="logo" alt="Arya College">
+    <div><div class="brand-name">ARYA <span>VERSE AI</span></div><div class="brand-sub">Autonomous API Integration & Orchestration</div></div>
+  </div>
+  <div class="top-actions"><span class="live-dot"></span><span>AGENT ONLINE</span><span class="pill">PS-02</span></div>
+</header>
+
+<main class="shell">
+<section class="hero">
+  <div>
+    <div class="eyebrow">INTELLIGENT API MIDDLEWARE</div>
+    <h1>Tell it what you need.<br><span>It orchestrates the APIs.</span></h1>
+    <p>Load an OpenAPI contract, describe a goal in plain English, and let Arya Verse AI plan, execute, recover and synthesize the workflow.</p>
+    <div class="hero-tags"><span>OpenAPI / Swagger</span><span>Multi-step chaining</span><span>Dynamic requests</span><span>Self-recovery</span></div>
+  </div>
+  <div class="orb-card"><div class="orb"><div class="orb-core">AV</div><div class="orbit o1"></div><div class="orbit o2"></div></div><div class="orb-caption">AGENTIC<br><b>ORCHESTRATOR</b></div></div>
+</section>
+
+<section class="grid">
+  <aside class="panel source-panel">
+    <div class="panel-head"><div><div class="section-kicker">01 / CONTRACT</div><h2>Connect an API</h2></div><span class="status-chip" id="specStatus">NO SPEC</span></div>
+    <div class="source-tabs"><button class="tab active" data-tab="demo">Demo</button><button class="tab" data-tab="url">URL</button><button class="tab" data-tab="file">File</button></div>
+    <div id="demoBox" class="tabbox"><button class="primary wide" id="demoBtn">Load AryaVerse Demo API <span>↗</span></button><small>JSONPlaceholder • live public endpoints</small></div>
+    <div id="urlBox" class="tabbox hidden"><input id="specUrl" placeholder="https://example.com/openapi.json"><button class="primary wide" id="urlBtn">Import OpenAPI URL</button></div>
+    <div id="fileBox" class="tabbox hidden"><label class="drop"><input id="specFile" type="file" accept=".json,.yaml,.yml"><span>Drop OpenAPI JSON/YAML here</span><b>Choose file</b></label></div>
+    <div id="specMeta" class="spec-meta hidden">
+      <div><span>API</span><b id="apiTitle">—</b></div><div><span>VERSION</span><b id="apiVersion">—</b></div><div><span>BASE URL</span><b id="baseUrl">—</b></div>
+    </div>
+    <div class="ops-wrap"><div class="ops-title">DISCOVERED ENDPOINTS <span id="opCount">0</span></div><div id="opsList" class="ops-list"></div></div>
+  </aside>
+
+  <section class="panel agent-panel">
+    <div class="panel-head"><div><div class="section-kicker">02 / AGENT</div><h2>Command the workflow</h2></div><span class="model-chip">PLANNER + TOOLS</span></div>
+    <div class="goal-box">
+      <label>Natural-language goal</label>
+      <textarea id="goal" placeholder="Example: Get user 1 and then show all posts written by that user"></textarea>
+      <div class="suggestions"><button data-q="Get user 1">Get user 1</button><button data-q="Get user 1 and then show all posts written by that user">Chain user → posts</button><button data-q="Show all posts written by user 2">Posts by user 2</button></div>
+    </div>
+    <div class="controls">
+      <div class="field"><label>AUTH MODE</label><select id="authType"><option value="">None</option><option value="bearer">Bearer Token</option><option value="api_key">API Key</option><option value="oauth2">OAuth2 Token</option></select></div>
+      <div class="field"><label>TOKEN / KEY</label><input id="authToken" type="password" placeholder="Optional"></div>
+      <div class="field smallf"><label>MAX STEPS</label><select id="maxSteps"><option>2</option><option selected>3</option></select></div>
+    </div>
+    <button class="run-btn" id="runBtn" disabled><span class="play">▶</span> RUN AUTONOMOUS WORKFLOW <kbd>CTRL ↵</kbd></button>
+    <div class="agent-strip"><div><i>◈</i><span>UNDERSTAND</span></div><b>→</b><div><i>◇</i><span>PLAN</span></div><b>→</b><div><i>⚡</i><span>EXECUTE</span></div><b>→</b><div><i>✦</i><span>SYNTHESIZE</span></div></div>
+  </section>
+</section>
+
+<section class="dashboard hidden" id="dashboard">
+  <div class="panel trace-panel">
+    <div class="panel-head"><div><div class="section-kicker">03 / LIVE TRACE</div><h2>Agent execution</h2></div><span id="duration" class="duration">—</span></div>
+    <div id="trace" class="trace"></div>
+  </div>
+  <div class="panel result-panel">
+    <div class="panel-head"><div><div class="section-kicker">04 / SYNTHESIS</div><h2>Unified result</h2></div><span class="success-badge">WORKFLOW COMPLETE</span></div>
+    <div class="summary" id="summary">—</div>
+    <div id="resultCards" class="result-cards"></div>
+  </div>
+</section>
+
+<section class="bottom-grid">
+  <div class="panel architecture">
+    <div class="section-kicker">AGENTIC ARCHITECTURE</div><h2>How Arya Verse AI thinks</h2>
+    <div class="arch-flow">
+      <div class="arch-node"><b>01</b><strong>Goal Parser</strong><span>Understands intent & entities</span></div><div class="arrow">→</div>
+      <div class="arch-node"><b>02</b><strong>Planner Agent</strong><span>Selects operations & dependencies</span></div><div class="arrow">→</div>
+      <div class="arch-node"><b>03</b><strong>Tool Executor</strong><span>Builds & sends HTTP requests</span></div><div class="arrow">→</div>
+      <div class="arch-node"><b>04</b><strong>Recovery Loop</strong><span>Retries & adapts on failure</span></div><div class="arrow">→</div>
+      <div class="arch-node"><b>05</b><strong>Synthesizer</strong><span>Merges multi-source responses</span></div>
+    </div>
+  </div>
+  <div class="panel audit-panel"><div class="panel-head"><div><div class="section-kicker">AUDIT TRAIL</div><h2>Recent runs</h2></div><button class="ghost" id="refreshAudit">Refresh</button></div><div id="audit" class="audit"></div></div>
+</section>
+<footer><span>ARYA COLLEGE OF ENGINEERING • KUKAS, JAIPUR</span><span>ARYA VERSE AI © 2026</span></footer>
+</main>
+<div id="toast" class="toast"></div>
+<script src="/assets/app.js"></script>
+</body>
+</html>
